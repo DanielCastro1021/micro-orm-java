@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>demo-hibernate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo-orm-hibernate</name>
-    <description>demo-orm-hibernate</description>
+    <name>demo-hibernate</name>
+    <description>demo-hibernate</description>
     <properties>
         <java.version>17</java.version>
     </properties>

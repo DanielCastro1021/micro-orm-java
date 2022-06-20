@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.demohibernate.repository;
 
-import com.example.demo.model.Employee;
+import com.example.demohibernate.model.Employee;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

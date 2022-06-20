@@ -1,7 +1,7 @@
-package com.example.demo;
+package com.example.demohibernate;
 
-import com.example.demo.model.Employee;
-import com.example.demo.repository.EmployeeRepository;
+import com.example.demohibernate.model.Employee;
+import com.example.demohibernate.repository.EmployeeRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class, ExecutionTimeTestExecutionListener.class})
-class DemoApplicationTests {
+class DemoHibernateApplicationTests {
 
     @Autowired
     private EmployeeRepository repository;

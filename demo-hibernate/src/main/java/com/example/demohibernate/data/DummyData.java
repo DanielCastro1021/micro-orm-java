@@ -1,6 +1,6 @@
-package com.example.demo.data;
+package com.example.demohibernate.data;
 
-import com.example.demo.repository.EmployeeRepository;
+import com.example.demohibernate.repository.EmployeeRepository;
 import lombok.extern.java.Log;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
