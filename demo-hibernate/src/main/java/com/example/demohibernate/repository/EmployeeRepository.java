@@ -1,12 +1,7 @@
 package com.example.demohibernate.repository;
 
-import com.example.demohibernate.model.Employee;
-import org.springframework.data.repository.CrudRepository;
+import com.example.demohibernate.model.EmployeesEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
-    Employee findEmployeeByName(String name);
-
-    List<Employee> findEmployeeByNameAndEyeColor(String name, String eyeColor);
+public interface EmployeeRepository extends JpaRepository<EmployeesEntity, Integer> {
 }
