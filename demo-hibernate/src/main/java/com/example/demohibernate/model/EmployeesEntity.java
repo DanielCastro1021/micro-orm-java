@@ -12,7 +12,7 @@ public class EmployeesEntity {
 
     @Id
     @Column(name = "emp_no")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int empNo;
 
     @Basic
