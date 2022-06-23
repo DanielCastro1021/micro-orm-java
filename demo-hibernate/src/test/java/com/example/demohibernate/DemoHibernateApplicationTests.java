@@ -1,7 +1,9 @@
 package com.example.demohibernate;
 
-import com.example.demohibernate.model.Employee;
+import com.example.demohibernate.repository.DepartmentRepository;
 import com.example.demohibernate.repository.EmployeeRepository;
+import com.example.demohibernate.repository.SalariesRepository;
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,34 +12,41 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Log
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class, ExecutionTimeTestExecutionListener.class})
 class DemoHibernateApplicationTests {
 
     @Autowired
-    private EmployeeRepository repository;
+    private EmployeeRepository employeeRepository;
+    @Autowired
+    private DepartmentRepository departmentRepository;
+
+    @Autowired
+    private SalariesRepository salariesRepository;
 
     @Test
     void injectedComponentsAreNotNull() {
-        assertThat(repository).isNotNull();
+        assertThat(employeeRepository).isNotNull();
+        assertThat(departmentRepository).isNotNull();
     }
 
     @Test
-    void whenSaved_thenFindsByName() {
-        Employee e = new Employee(
-                "Luis",
-                "Red");
-        repository.save(e);
-        assertThat(repository.findEmployeeByName("Luis")).isNotNull();
-        repository.delete(e);
+    void findAllEmployees() {
+        log.info(String.valueOf((long) employeeRepository.findAll().size()));
     }
 
     @Test
-    void timeQueryFindEmployeeByName() {
-        repository.findEmployeeByName("Luis");
+    void findAllDepartments() {
+        log.info(String.valueOf((long) departmentRepository.findAll().size()));
+    }
+
+    @Test
+    void findAllSalaries() {
+        salariesRepository.findAll().forEach(salariesEntity -> log.info(salariesEntity.toString()));
+        //log.info(String.valueOf((long) salariesRepository.findAll().size()));
     }
 }
